@@ -1,0 +1,141 @@
+/* ==========================================================================
+   Header - Structure
+   ========================================================================== */
+.pageHeader{
+    position: absolute;
+    width: 100%;
+    padding: 26px 0px;
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 1%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 1%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 1%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    
+    .menu-mobile-toggle {
+        display: none;
+    }
+    .logo {
+        @include span-columns(1);
+        float: none;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .mainMenu {
+        @include span-columns(8);
+        float: none;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: -4px;
+    }
+    .userOptions {
+        @include span-columns(3);
+        float: none;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: -4px;
+    }
+
+    @include media($tablet) {
+        .menu-mobile-toggle {
+            @include span-columns(1);
+            float: none;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .logo {
+            @include span-columns(2);
+            float: none;
+            display: inline-block;            
+            margin-left: -4px;
+        }
+        .mainMenu {
+            position: absolute;
+        }
+        .userOptions {
+            @include span-columns(5);
+            float: none;
+            display: inline-block;
+        }
+    }
+
+    @include media($mobile) {
+        .menu-mobile-toggle {
+            @include span-columns(1);
+            float: none;
+            display: inline-block;
+        }
+        .logo {
+            @include span-columns(1);
+            float: none;
+            display: inline-block;            
+            margin-left: -4px;
+        }        
+        .userOptions {
+            @include span-columns(2);
+            float: none;
+            display: inline-block;
+        }
+    }
+}
+
+/* ==========================================================================
+   Header - Customization
+   ========================================================================== */
+.pageHeader{
+    color: $white;
+    .menu-mobile-toggle {
+        text-align: center;
+        font-size: rem(25px);
+        line-height: 0;
+        cursor: pointer;
+    }
+
+    .logo {
+        a {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    .userOptions {
+        text-align: right;
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            &:not(:last-child) {
+                margin-right: 5px;
+            }
+        }
+        a {
+            display: block;
+            @include secondaryButton(rgba($white, 0),12px 20px,1px solid $white,$white,rem(14px),200,4px,rgba($white, .2),$white);
+        }
+    }
+
+    @include media($tablet) {
+        .logo {
+            a {
+                text-align: left;
+            }
+        }
+    }
+    @include media($mobile) {
+        .logo {
+            a {
+                text-align: center;
+            }
+        }
+
+        .userOptions {            
+            li {
+                display: block;                
+                &:not(:last-child) {
+                    margin-right: 0px;
+                    margin-bottom: 5px;
+                }
+            }
+            a {
+                display: inline-block;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+/*titles*/
+@mixin pageTitle (){
+}
+
+@mixin sectionTitle(){
+	margin-bottom: 50px;
+	color: $color1;
+	font-size: rem(28px);
+	font-weight: 300;
+	text-align: center;
+	line-height: 1.5;
+
+	span {
+		display: block;
+		margin-top: 20px;
+		font-size: rem(12px);
+	}
+}
+
+@mixin subTitle(){
+	margin-bottom: 50px;
+	color: $color1;
+	font-size: rem(22px);
+	font-weight: 300;
+	text-align: center;
+	line-height: 1.5;
+}
